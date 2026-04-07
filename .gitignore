@@ -1,4 +1,4 @@
-!/cli-plugins
+/cli-plugins
 !/persistant-settings
 !/stacks
 
@@ -10,9 +10,6 @@
 
 # Ignore everything in config by default
 /stacks/aria2/config/*
-
-# But include only aria2.conf
-!/stacks/aria2/config/aria2.conf
 
 # Ignore everything else
 # /stacks/*
