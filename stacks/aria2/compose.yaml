@@ -1,0 +1,33 @@
+services:
+  aria2:
+    image: p3terx/aria2-pro
+    container_name: aria2
+    entrypoint: /entrypoint.sh
+    ports:
+      - 6803:6800 # Aria2 RPC
+      - 6889:6888 # Aria2 Optional: for BitTorrent/DHT
+      - 6890:6890/udp # Aria2 udp
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    env_file:
+      - .env
+    volumes:
+      - ${STACKS_DIR}/aria2/entrypoint.sh:/entrypoint.sh:ro
+      - ${STACKS_DIR}/aria2/config:/config
+      - /mnt/data/Downloads/:/downloads
+      - /mnt/data/Books:/books
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+networks:
+  nginx_net:
+    external: true

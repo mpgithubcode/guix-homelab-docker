@@ -1,0 +1,57 @@
+!/cli-plugins
+!/persistant-settings
+!/stacks
+
+# Include stacks/aria2 folder and all its contents
+!/stacks/aria2
+!/stacks/aria2/.env
+!/stacks/aria2/entrypoint.sh
+!/stacks/aria2/compose.yaml
+
+# Ignore everything in config by default
+/stacks/aria2/config/*
+
+# But include only aria2.conf
+!/stacks/aria2/config/aria2.conf
+
+# Ignore everything else
+# /stacks/*
+/stacks/actual
+/stacks/actual-budget
+/stacks/authelia
+/stacks/beszel
+/stacks/calibre
+/stacks/cloudflare-tunnel
+/stacks/code-server
+/stacks/copyparty
+/stacks/database
+/stacks/dockge
+/stacks/dupeguru
+/stacks/glutun
+/stacks/immich
+/stacks/jellyfin
+/stacks/karakeep
+/stacks/lldap
+/stacks/metadata-remote
+stacks/nextcloud-aio
+/stacks/nginx
+/stacks/nvim
+/stacks/ollama
+/stacks/open-webui
+/stacks/paperless
+/stacks/pgdata
+/stacks/picard
+/stacks/protonmail-bridge
+/stacks/redisdata
+/stacks/sabre-dav
+/stacks/searxng
+/stacks/soulseek
+/stacks/picard
+/stacks/protonmail-bridge
+/stacks/redisdata
+/stacks/sabre-dav
+/stacks/searxng
+/stacks/soulseek
+/stacks/stacks
+/stacks/vaultwarden
+/stacks/ytptube

@@ -1,0 +1,27 @@
+services:
+  gpu-base:
+    image: scratch
+    environment:
+      PATH: /usr/nvidia:$PATH
+      LD_LIBRARY_PATH: >
+        /usr/local/guix-nvidia-driver:/usr/local/guix-nvidia-driver-570:
+        /usr/local/guix-cuda-nvml:/usr/local/guix-cuda-nvrtc:
+        /usr/local/guix-cuda-toolkit:/usr/local/guix-cuda-nvrtc-static:
+        /usr/local/guix-cuda-nvml-static:/usr/local/guix-cuda-cudart:/gnu/store
+    devices:
+      - /dev/nvidia0
+      - /dev/nvidiactl
+      - /dev/nvidia-modeset
+      - /dev/nvidia-uvm
+      - /dev/nvidia-uvm-tools
+    volumes:
+      - /gnu/store/1lp7ylwskhwx0lqvx5g19yj7c6l0kbfc-nvidia-driver-580.76.05/lib:/usr/local/guix-nvidia-driver
+      - /gnu/store/59zxlhg4pvw7wr85pcy9r55jj3njknwl-cuda-nvml-dev-12.8.90/lib:/usr/local/guix-cuda-nvml:ro
+      - /gnu/store/359p4yzs2pp4afxp0r8pjzhyzym435sf-cuda-nvrtc-12.8.93/lib:/usr/local/guix-cuda-nvrtc:ro
+      - /gnu/store/gg4gyazl2acbwchdb8jfx1llaiqhicqg-cuda-toolkit-12.9.1/lib:/usr/local/guix-cuda-toolkit:ro
+      - /gnu/store/ivb4w1fmqwfzbjrlz3gyc64r3zs77xia-cuda-nvrtc-12.8.93-static/lib:/usr/local/guix-cuda-nvrtc-static:ro
+      - /gnu/store/m47jzdaqmhry5ysdxqr2v8igz0iy6d3r-cuda-nvml-dev-12.8.90-static/lib:/usr/local/guix-cuda-nvml-static:ro
+      - /gnu/store/paipizm2kz74pfw01l0kj8p0l3i12j2c-cuda-cudart-12.8.90/lib:/usr/local/guix-cuda-cudart:ro
+      - /home/mperry/.guix-profile/bin/nvidia-smi:/usr/nvidia/nvidia-smi:ro
+      - /gnu/store:/gnu/store:ro
+
