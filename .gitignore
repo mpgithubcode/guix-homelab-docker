@@ -13,6 +13,12 @@
 !/stacks/nextcloud/compose.yml
 !/stacks/nextcloud/.env
 
+# REDIS
+!/stacks/redis/
+!/stacks/redis/compose.yml
+!/stacks/redis/.env
+!/stacks/redis/redis.conf
+
 # Ignore everything in config by default
 /stacks/aria2/config/*
 
@@ -43,7 +49,6 @@
 /stacks/pgdata
 /stacks/picard
 /stacks/protonmail-bridge
-/stacks/redisdata
 /stacks/sabre-dav
 /stacks/searxng
 /stacks/soulseek
