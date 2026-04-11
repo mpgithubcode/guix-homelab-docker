@@ -13,8 +13,14 @@
 !/stacks/nextcloud/compose.yml
 !/stacks/nextcloud/.env
 
+# POSTGRES
+!/stacks/postgres
+!/stacks/postgres/compose.yml
+!/stacks/postgres/.env
+!/stacks/postgres/entrypoint.sh
+
 # REDIS
-!/stacks/redis/
+!/stacks/redis
 !/stacks/redis/compose.yml
 !/stacks/redis/.env
 !/stacks/redis/redis.conf
