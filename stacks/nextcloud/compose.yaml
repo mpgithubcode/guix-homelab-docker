@@ -1,0 +1,38 @@
+services:
+  app:
+    image: nextcloud:apache
+    container_name: nextcloud
+    restart: always
+    ports:
+      - 8239:80
+    volumes:
+      - nextcloud_data:/var/www/html:z
+      - /mnt/data/:/external_1
+    env_file:
+      - .env
+    networks:
+      - nginx_net
+      - backend
+      - protonmail_net
+      - lldap_net
+  cron:
+    image: nextcloud:apache
+    container_name: nextcloud_cron
+    restart: always
+    volumes:
+      - nextcloud_data:/var/www/html:z
+    entrypoint: /cron.sh
+    networks:
+      - backend
+volumes:
+  nextcloud_data:
+    name: nextcloud_data
+networks:
+  backend:
+    external: true
+  nginx_net:
+    external: true
+  lldap_net:
+    external: true
+  protonmail_net:
+    external: true

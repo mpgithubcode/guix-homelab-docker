@@ -2,11 +2,16 @@
 !/persistant-settings
 !/stacks
 
-# Include stacks/aria2 folder and all its contents
+# ARIA2
 !/stacks/aria2
 !/stacks/aria2/.env
 !/stacks/aria2/entrypoint.sh
 !/stacks/aria2/compose.yaml
+
+# NEXTCLOUD
+!/stacks/nextcloud
+!/stacks/nextcloud/compose.yml
+!/stacks/nextcloud/.env
 
 # Ignore everything in config by default
 /stacks/aria2/config/*
@@ -30,7 +35,6 @@
 /stacks/karakeep
 /stacks/lldap
 /stacks/metadata-remote
-stacks/nextcloud-aio
 /stacks/nginx
 /stacks/nvim
 /stacks/ollama
